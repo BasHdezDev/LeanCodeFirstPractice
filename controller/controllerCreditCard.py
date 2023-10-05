@@ -19,7 +19,7 @@ def get_cursor():
 
 def create_table():
     """
-        Creates  table if it does not exist
+        Creates table if it does not exist
     """
     sql = ""
     with open("../sql/createcreditcard.sql", "r") as f:
