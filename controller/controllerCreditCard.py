@@ -1,8 +1,8 @@
 import SecretConfig
 import psycopg2
-import sys
 from model.creditCard import CreditCard
 import Exceptions
+
 
 def get_cursor():
     """
