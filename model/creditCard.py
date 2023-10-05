@@ -1,4 +1,5 @@
 from datetime import date
+import Exceptions
 
 
 class CreditCard:
@@ -18,3 +19,44 @@ class CreditCard:
         self.interest_rate: float = interest_rate
         self.ANUALINTEREST = self.interest_rate * 12
         self.interest_percentage = self.interest_rate/100
+
+    def total_interest(self, amount: float, installments: int) -> float:
+
+        """
+        Calculates the total interest payment for an installment purchase
+        """
+
+        payment_value: float = self.monthly_payment(amount, installments)
+        total_interest: float = round((payment_value * installments) - amount, 2)
+        return total_interest
+
+    def saving_plan(self, monthly_amount: float, total_amount: float) -> int:
+        """
+        Calculates the number of months that the user should save to make the same
+        purchase instead of buying it in installments
+        """
+        total_interest: float = 0
+        subtotal: float = 0
+        payment_number: int = 0
+        while subtotal < total_amount:
+            payment_number += 1
+            subtotal += round(monthly_amount + total_interest, 4)
+            total_interest = round(self.interest_percentage * subtotal, 4)
+            print(payment_number)
+            if subtotal >= total_amount:
+                return payment_number
+
+    def monthly_payment(self, amount: float, installments: int) -> float:
+        """
+        Calculates the monthly payment for an installment purchase
+        """
+        if amount == 0:
+            raise Exceptions.ZeroAmount
+        elif installments <= 0:
+            raise Exceptions.NegativePayments
+        if self.interest_rate == 0:
+            return amount / installments
+        if installments == 1:
+            return amount
+        else:
+            return round((amount * self.interest_percentage)/(1 - (1 + self.interest_percentage)**(-installments)), 4)
