@@ -9,8 +9,6 @@ from controller import controllerCreditCard
 class TestControllerCreditCard(unittest.TestCase):
     """Tests for the Controller Class of the credit card"""
 
-    # TEST FIXTURES
-    # Code that runs before each test
 
     def setUpClass():
         """ Executed at the beginning of all tests """

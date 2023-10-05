@@ -10,9 +10,6 @@ import testControllerCreditCard
 class TestPayment(unittest.TestCase):
     """Tests for the calc monthly payment and calc total interest functions"""
 
-    # TEST FIXTURES
-    # Code that runs before each test
-
     def setUpClass():
         """ Executed at the beginning of all tests """
 
