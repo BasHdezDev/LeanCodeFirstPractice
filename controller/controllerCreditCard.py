@@ -1,7 +1,7 @@
 import SecretConfig
 import psycopg2
 import sys
-
+from model import creditCard
 
 def get_cursor():
     """
@@ -61,4 +61,13 @@ def delete_all_rows():
     cursor.execute(sql)
     cursor.connection.commit()
 
+
+def delete_a_creditcard(creditcard: creditCard):
+    """
+    Deletes a credit card from the table
+    """
+    sql = f"DELETE FROM credit_cards WHERE card_number = '{creditcard.card_number}'"
+    cursor = get_cursor()
+    cursor.execute(sql)
+    cursor.connection.commit()
 
