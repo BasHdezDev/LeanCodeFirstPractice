@@ -61,3 +61,4 @@ def delete_all_rows():
     cursor.execute(sql)
     cursor.connection.commit()
 
+
