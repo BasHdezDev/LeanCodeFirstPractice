@@ -103,7 +103,7 @@ def get_payment_plan():
 def calc_total_payment_in_x_interval(initial_date: date, final_date: date):
     """Calculates the sum of the monthly payments in a specified range of months"""
     cursor = get_cursor()
-    cursor.execute(f"""SELECT payment_amount FROM payment_plans WHERE payment_date >= '{initial_date}'
+    cursor.execute(f"""SELECT payment_amount FROM paymentplan WHERE payment_date >= '{initial_date}'
                         and payment_date <= '{final_date}'
                     """)
     amounts = cursor.fetchall()

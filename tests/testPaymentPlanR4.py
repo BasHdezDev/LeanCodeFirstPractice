@@ -25,7 +25,7 @@ class ControllerPaymentPlanTest(unittest.TestCase):
 
         # Ensure that at the beginning of the tests, the table is created
 
-        tests_credit_cards = testControllerCreditCard.TestControllerCreditCard()
+        tests_credit_cards = testControllerCreditCardR1R2.TestControllerCreditCard()
         tests_credit_cards.test_01_insert1()
         tests_credit_cards.test_01_insert2()
         tests_credit_cards.test_01_insert4()
