@@ -66,7 +66,7 @@ def delete_all_rows():
 def search_by_id(card_number):
     cursor = get_cursor()
     cursor.execute(f"""SELECT card_number, owner_id, owner_name, bank_name, due_date, franchise, payment_day,
-     monthly_fee, interest_rate FROM credit_cards where card_number = '{card_number}'""")
+     monthly_fee, interest_rate FROM creditcard where card_number = '{card_number}'""")
 
     row = cursor.fetchone()
     if row is None:
@@ -97,7 +97,7 @@ def insert(creditcard: CreditCard):
     try:
 
         cursor.execute(f"""
-        INSERT INTO credit_cards (
+        INSERT INTO creditcard(
             card_number, owner_id, owner_name, bank_name, due_date, franchise, payment_day, monthly_fee, interest_rate
         )
         VALUES
@@ -125,7 +125,7 @@ def delete_a_creditcard(creditcard: CreditCard):
     """
     Deletes a credit card from the table
     """
-    sql = f"DELETE FROM credit_cards WHERE card_number = '{creditcard.card_number}'"
+    sql = f"DELETE FROM creditcard WHERE card_number = '{creditcard.card_number}'"
     cursor = get_cursor()
     cursor.execute(sql)
     cursor.connection.commit()
