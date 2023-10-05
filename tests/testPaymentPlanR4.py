@@ -5,7 +5,7 @@ import datetime
 from model.paymentPlan import PaymentPlan
 from controller import controllerPaymentPlan
 from controller import controllerCreditCard
-import testControllerCreditCard
+import testControllerCreditCardR1R2
 
 
 class ControllerPaymentPlanTest(unittest.TestCase):

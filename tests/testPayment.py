@@ -4,7 +4,7 @@ from datetime import date
 import Exceptions
 from model.creditCard import CreditCard
 from controller import controllerCreditCard
-import testControllerCreditCard
+import testControllerCreditCardR1R2
 
 
 class TestPayment(unittest.TestCase):
