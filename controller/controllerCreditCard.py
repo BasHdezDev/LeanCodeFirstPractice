@@ -1,7 +1,8 @@
 import SecretConfig
 import psycopg2
 import sys
-from model import creditCard
+from model.creditCard import CreditCard
+import Exceptions
 
 def get_cursor():
     """
@@ -62,7 +63,65 @@ def delete_all_rows():
     cursor.connection.commit()
 
 
-def delete_a_creditcard(creditcard: creditCard):
+def search_by_id(card_number):
+    cursor = get_cursor()
+    cursor.execute(f"""SELECT card_number, owner_id, owner_name, bank_name, due_date, franchise, payment_day,
+     monthly_fee, interest_rate FROM credit_cards where card_number = '{card_number}'""")
+
+    row = cursor.fetchone()
+    if row is None:
+        raise Exceptions.NoCard
+
+    result = CreditCard(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8])
+    return result
+
+
+def insert(creditcard: CreditCard):
+    """Insert a credit card in the database"""
+
+    cursor = get_cursor()
+
+    try:
+
+        card_number_search = search_by_id(creditcard.card_number)
+
+        if card_number_search is None:
+            pass
+        elif card_number_search.card_number == creditcard.card_number:
+            raise Exceptions.CreditCardAlreadyInDatabase
+    except Exceptions.NoCard:
+        pass
+    except Exceptions.CreditCardAlreadyInDatabase:
+        raise Exceptions.CreditCardAlreadyInDatabase
+
+    try:
+
+        cursor.execute(f"""
+        INSERT INTO credit_cards (
+            card_number, owner_id, owner_name, bank_name, due_date, franchise, payment_day, monthly_fee, interest_rate
+        )
+        VALUES
+        (
+            '{creditcard.card_number}', 
+            '{creditcard.owner_id}', 
+            '{creditcard.owner_name}', 
+            '{creditcard.bank_name}', 
+            '{creditcard.due_date}', 
+            '{creditcard.franchise}', 
+            '{creditcard.payment_day}',
+            '{creditcard.monthly_fee}', 
+            '{creditcard.interest_rate}'
+        );
+                        """)
+
+        cursor.connection.commit()
+        print("Credit card saved succesfully")
+    except Exception as err:
+        print(err)
+        cursor.connection.rollback()
+
+
+def delete_a_creditcard(creditcard: CreditCard):
     """
     Deletes a credit card from the table
     """
