@@ -14,7 +14,7 @@ def params():
 
 """
 R1
-Ejemplo pa usarlo
+Usage example
 http://127.0.0.1:5000/api/card/new?card_number=1256487&owner_id=1255487896&owner_name=DonJules&bank_name=Falabella&due_date=2028-10-25&franchise=VISA&payment_day=10&monthly_fee=24000&interest_rate=3.1
 """
 
