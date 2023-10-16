@@ -21,11 +21,11 @@
 - Then, in the code you will change the things as the following instructions:
 
 
-In DATABASE = "You will write what it says on NAME"
-USER = "You will write what it says on USER"
-PASSWORD = "You will write what it says on PASSWORD"
-HOST = "ou will write what it says on HOST"
-PORT = 5432  # BY DEFAULT IT IS 5432, BUT IT CAN CHANGE IN YOUR DB
+- In DATABASE = "You will write what it says on NAME"
+- In USER = "You will write what it says on USER"
+- In PASSWORD = "You will write what it says on PASSWORD"
+- In HOST = "ou will write what it says on HOST"
+- In PORT = 5432  # BY DEFAULT IT IS 5432, BUT IT CAN CHANGE IN YOUR DB
 
 
 
