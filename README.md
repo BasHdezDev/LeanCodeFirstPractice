@@ -5,6 +5,7 @@
 - In that page, you will see a blurred part in a code, click on it and then it would be a non-blurred text, that's your password, be careful
 - Then, in the part that says 'psql', click on it, and the choose Django
 - You will see something like this:
+  
 - DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
@@ -15,10 +16,16 @@
     'PORT': 'YOURPORT',
   }
 }
+
 - Then, go to the file Secret_Config-sample and refactor it as Secret_Config.py
 - Then, in the code you will change the things as the following instructions:
-- 
 
+
+In DATABASE = "You will write what it says on NAME"
+USER = "You will write what it says on USER"
+PASSWORD = "You will write what it says on PASSWORD"
+HOST = "ou will write what it says on HOST"
+PORT = 5432  # BY DEFAULT IT IS 5432, BUT IT CAN CHANGE IN YOUR DB
 
 
 
