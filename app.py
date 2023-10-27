@@ -15,7 +15,6 @@ def params():
 """
 R1
 Usage example
-http://127.0.0.1:5000/api/card/new?card_number=1256487&owner_id=1255487896&owner_name=DonJules&bank_name=Falabella&due_date=2028-10-25&franchise=VISA&payment_day=10&monthly_fee=24000&interest_rate=3.1
 """
 
 
@@ -106,9 +105,35 @@ def simulate_payment_plan():
         return {"status": "ok"}
 
     except Exception as err:
-        return {"status": "error",
-                "message": "Request could not be completed",
-                "error": str(err)}
+        return {"status": "error", "message": "Request could not be completed", "error": str(err)}
+
+
+"""
+R5
+http://127.0.0.1:5000/api/card/show?card_number=123456789
+"""
+
+
+@app.route('/api/card/show')
+def showcard():
+    try:
+        card_number = request.args["card_number"]
+
+        response = controllerCreditCard.search_by_id(card_number)
+
+        return {"status": "ok",
+                "card number": f"{response.card_number}",
+                "owner id": f"{response.owner_id}",
+                "owner name": f"{response.owner_name}",
+                "bank name": f"{response.bank_name}",
+                "due date": f"{response.due_date}",
+                "franchise": f"{response.franchise}",
+                "payment day": f"{response.payment_day}",
+                "monthly fee": f"{response.monthly_fee}",
+                "interest rate": f"{response.interest_rate}"
+                }
+    except Exception as err:
+        return {"status": "error", "mensaje": "La peticion no se puede completar", "error": str(err)}
 
 
 if __name__ == '__main__':
