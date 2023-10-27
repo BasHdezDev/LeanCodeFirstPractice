@@ -14,7 +14,6 @@ def params():
 
 """
 R1
-Usage example
 """
 
 
@@ -43,7 +42,6 @@ def createcard():
 
 """
 R2
-http://127.0.0.1:5000/api/simulate/purchase?card_number=1256487&purchase_amount=480000&payments=48
 """
 
 
@@ -67,7 +65,6 @@ def simulate_purchase():
 
 """
 R3
-http://127.0.0.1:5000/api/simulate/saving?card_number=1256487&purchase_amount=480000&payments=24
 """
 
 
@@ -88,7 +85,6 @@ def simulate_planned_saving():
 
 """
 R4
-/api/purchase/new?card_number=1256487&purchase_amount=200000&&payments=36&purchase_date=2023-09-11
 """
 
 
@@ -110,7 +106,6 @@ def simulate_payment_plan():
 
 """
 R5
-http://127.0.0.1:5000/api/card/show?card_number=123456789
 """
 
 
