@@ -54,8 +54,6 @@ by Sebastián Hernández Díaz
 - In the app.py you will see a comment between """ **TEXT_HERE** """, in that comment, you will find a R1, R2, R3, R4, and right below a function
 - The function will always start with **@app.route('*/HERE_GOES_A_WEB_ROUTE*')**
 
-
-**----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
   
 - ## For the R1:
 - You must provide a:
@@ -75,7 +73,7 @@ by Sebastián Hernández Díaz
 
 Copy the whole path and copy it on the search bar and click enter
 
-**----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
+
 
 - ## For the R2:
 - You must provide a:
@@ -90,7 +88,6 @@ Copy the whole path and copy it on the search bar and click enter
 
 Copy the whole path and copy it on the search bar and click enter
 
-**---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
 
 - ## For the R3:
 - You must provide a:
@@ -105,7 +102,6 @@ Copy the whole path and copy it on the search bar and click enter
 Copy the whole path and copy it on the search bar and click enter
 
 
-**---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
 
 - ## For the R4:
 - You must provide a:
@@ -120,7 +116,6 @@ Copy the whole path and copy it on the search bar and click enter
 
 Copy the whole path and copy it on the search bar and click enter
 
-**---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
 
 - ## For the R5:
 - You must provide a:
