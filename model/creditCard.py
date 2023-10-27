@@ -30,7 +30,8 @@ class CreditCard:
         total_interest: float = round((payment_value * installments) - amount, 2)
         return total_interest
 
-    def saving_plan(self, monthly_amount: float, total_amount: float) -> float:
+    @staticmethod
+    def saving_plan(monthly_amount: float, total_amount: float, saving_interest: float) -> float:
         """
         Calculates the number of months that the user should save to make the same
         purchase instead of buying it in installments
@@ -41,8 +42,7 @@ class CreditCard:
         while subtotal < total_amount:
             payment_number += 1
             subtotal += round(monthly_amount + total_interest, 4)
-            total_interest = round(self.interest_percentage * subtotal, 4)
-            print(payment_number)
+            total_interest = round(saving_interest * subtotal, 4)
             if subtotal >= total_amount:
                 return payment_number
 
@@ -60,3 +60,5 @@ class CreditCard:
             return amount
         else:
             return round((amount * self.interest_percentage)/(1 - (1 + self.interest_percentage)**(-installments)), 4)
+
+

@@ -76,14 +76,11 @@ http://127.0.0.1:5000/api/simulate/saving?card_number=1256487&purchase_amount=48
 def simulate_planned_saving():
 
     try:
-        card_number = request.args["card_number"]
         purchase_amount = float(request.args["purchase_amount"])
-        payments = int(request.args["payments"])
+        monthly_payment = int(request.args["monthly_payment"])
+        interest_rate = float(request.args["interest_rate"])
 
-        search_credit_card = controllerCreditCard.search_by_id(card_number)
-
-        monthly_amount = CreditCard.monthly_payment(search_credit_card, purchase_amount, payments)
-        planned_saving = CreditCard.saving_plan(search_credit_card, monthly_amount, purchase_amount)
+        planned_saving = CreditCard.saving_plan(monthly_payment, purchase_amount, interest_rate)
 
         return {"status": "ok", "months": planned_saving}
     except Exception as err:

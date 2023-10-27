@@ -10,7 +10,7 @@ import testControllerCreditCardR1R2
 class TestPayment(unittest.TestCase):
     """Tests for the calc monthly payment and calc total interest functions"""
 
-    def setUpClass():
+    def setUpClass(self):
         """ Executed at the beginning of all tests """
 
         print("Invoking setUpClass")
@@ -25,7 +25,7 @@ class TestPayment(unittest.TestCase):
         tests_credit_cards.test_01_insert4()
         tests_credit_cards.test_01_insert5()
 
-    def tearDownClass():
+    def tearDownClass(self):
         """ Executed at the end of all tests """
         print("Invoking tearDownClass")
         controllerCreditCard.delete_all_rows()
