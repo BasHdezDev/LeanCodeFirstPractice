@@ -47,6 +47,7 @@ by Sebastián Hernández Díaz
 
 # How to run the web service
 
+- Go to the terminal and install Flask like this: pip install Flask
 - After get done the software configuration right above, click on app.py and see the whole file
 - Run it and in the terminal, it would create a link (Normally this one: **http://127.0.0.1:5000**)
 - Click on it and open it in your browser (**Please do it on Chrome**)
