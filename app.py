@@ -1,6 +1,6 @@
 from datetime import date
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 from model.creditCard import CreditCard
 from controller import controllerCreditCard, controllerPaymentPlan
 
@@ -10,6 +10,11 @@ app = Flask(__name__)
 @app.route('/params')
 def params():
     return request.args
+
+
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 
 """
