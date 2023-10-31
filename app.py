@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/params')
 def params():
-    return request.args
+    return request.form
 
 
 @app.route("/")
@@ -17,30 +17,40 @@ def home():
     return render_template("index.html")
 
 
+@app.route('/api/card/new')
+def show():
+    return render_template("newcard.html")
+
+
+@app.route('/api/card/', methods=['POST'])
+def showpass():
+    return render_template("pass.html")
+
+
 """
 R1
 """
 
 
-@app.route('/api/card/new')
+@app.route('/api/card/new', methods=['POST'])
 def createcard():
     try:
-        card_number = request.args["card_number"]
-        owner_id = request.args["owner_id"]
-        owner_name = request.args["owner_name"]
-        bank_name = request.args["bank_name"]
-        due_date = request.args["due_date"]
-        franchise = request.args["franchise"]
-        payment_day = int(request.args["payment_day"])
-        monthly_fee = int(request.args["monthly_fee"])
-        interest_rate = float(request.args["interest_rate"])
+        card_number = request.form["card_number"]
+        owner_id = request.form["owner_id"]
+        owner_name = request.form["owner_name"]
+        bank_name = request.form["bank_name"]
+        due_date = request.form["due_date"]
+        franchise = request.form["franchise"]
+        payment_day = int(request.form["payment_day"])
+        monthly_fee = int(request.form["monthly_fee"])
+        interest_rate = float(request.form["interest_rate"])
 
         creditcard_test = CreditCard(card_number, owner_id, owner_name, bank_name, due_date, franchise, payment_day,
                                      monthly_fee, interest_rate)
 
         controllerCreditCard.insert(creditcard_test)
 
-        return {"status": "ok"}
+        return render_template("pass.html", name=owner_name)
     except Exception as err:
         return {"status": "error", "mensaje": "La peticion no se puede completar", "error": str(err)}
 

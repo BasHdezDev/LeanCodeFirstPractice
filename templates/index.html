@@ -4,8 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <style>
+
+.maintitle {
+    display: block;
+    text-align: center;
+    align-items: center;
+}
+
+. titlehome {
+    color: rgb(52, 49, 45);
+}
+
+.options {
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+.options-cards {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    border-radius: 10px;
+    min-height: 200px;
+    font-weight: bold;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+
+    width: calc(33.33% - 60px);
+}
+
+.card .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .text-button {
+    border-radius: 2px;
+
+    text-align: center;
+}
+
+
+    </style>
 </head>
 <body>
-    <h1>Funcioname omeee</h1>
+    <div class="background">
+        <div class="maintitle">
+            <h1 class = "titlehome" >Home | Credit Card Manager</h1>
+        </div>
+
+        <div class="options">
+            <h2 class="optionstitle">Options you can choose: </h2>
+            <div class="options-cards">
+                <div class="card" style="background-image: {{url_for('static', filename='creditcard2.jpg')}};">
+                    <div class="text">
+                        <h3>Register a Credit Card</h3>
+                        <p>You can register a credit card in the database.</p>
+                    </div>
+                    <button class="text-button" onclick="location.href='/api/card/new'">Register</button>
+                </div>
+
+                <div class="card" style="background-image: {{url_for('static', filename='compra2.webp')}};">
+                    <div class="text">
+                        <h3>Simulate purchase</h3>
+                        <p>You can simulate a purchase.</p>
+                    </div>
+                    
+                    <button class="text-button">Simulate</button>
+                </div>
+
+                <div class="card" style="background-image: {{url_for('static', filename='savemoney.gif')}};">
+                    <div class="text">
+                        <h3>Sugested Saving Plan</h3>
+                        <p>Here we sugest you a saving plan.</p>
+                    </div>
+                    
+                    <button class="text-button">Saving</button>
+                </div>
+
+                <div class="card" style="background-image: {{url_for('static', filename='registrocompra.jpg')}};">
+                    <div class="text">
+                        <h3>Register a Purchase</h3>
+                        <p>You can register a purchase in the database.</p>
+                    </div>
+
+                    
+                    <button class="text-button">Purchase</button>
+                </div>
+
+                <div class="card" style="background-image: {{url_for('static', filename='compra.jpg')}};">
+                    <div class="text">
+                        <h3>Payments Plan</h3>
+                        <p>You can check the payment plan for a purchase.</p>
+                    </div>
+                    
+                    <button class="text-button">Payments</button>
+                </div>
+
+                <div class="card" style="background-image: {{url_for('static', filename='surprise2.jpg')}};">
+                    <div class="text">
+                        <h3>Surprise Funtionality</h3>
+                        <p>It's surprise.</p>
+                    </div>
+                    
+                    <button class="text-button">Surprise</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
