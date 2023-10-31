@@ -19,7 +19,7 @@ def home():
 
 @app.route('/api/card/new')
 def show():
-    return render_template("pass.html")
+    return render_template("newcard.html")
 
 
 """
@@ -27,7 +27,7 @@ R1
 """
 
 
-@app.route('/api/card/new')
+@app.route('/api/card/new/create')
 def createcard():
     try:
         card_number = request.args["card_number"]
@@ -45,7 +45,7 @@ def createcard():
 
         controllerCreditCard.insert(creditcard_test)
 
-        return render_template("pass.html", name=owner_name)
+        return render_template("pass.html")
     except Exception as err:
         return {"status": "error", "mensaje": "La peticion no se puede completar", "error": str(err)}
 
