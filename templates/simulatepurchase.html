@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .input {
+        padding-top: 5px;
+        {
+    </style>
+    <title>New Card</title>
+</head>
+<body>
+<h2>Insert the information of the card already existent</h2>
+<form name="passdata" action="/api/simulate/purchase/logic" style="display:flex; flex-wrap: wrap;" >
+    <div>
+        <div>
+            <label >Card number: </label>
+            <input class="input" type="number" name="card_number">
+        </div>
+        <div>
+            <label>Purchase amount: </label>
+            <input class="input" type="number" name="purchase_amount">
+        </div>
+        <div>
+            <label>Payment: </label>
+            <input class="input" type="number" name="payments">
+        </div>
+        <input class="input" type="submit" name="guardar">
+    </div>
+
+</form>
+</body>
+</html>

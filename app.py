@@ -22,6 +22,11 @@ def show():
     return render_template("newcard.html")
 
 
+@app.route('/api/simulate/purchase')
+def show_simulate():
+    return render_template("simulatepurchase.html")
+
+
 """
 R1
 """
@@ -55,7 +60,7 @@ R2
 """
 
 
-@app.route('/api/simulate/purchase')
+@app.route('/api/simulate/purchase/logic')
 def simulate_purchase():
 
     try:
@@ -68,7 +73,7 @@ def simulate_purchase():
         monthly_payment = card_search.monthly_payment(purchase_amount, payments)
         interest = card_search.total_interest(purchase_amount, payments)
 
-        return {"status": "ok", "monthly_payment": f"{monthly_payment}", "total_interest": f"{interest}"}
+        return render_template("pass_simulate.html", m=monthly_payment, i=interest)
     except Exception as err:
         return {"status": "error", "mensaje": "La peticion no se puede completar", "error": str(err)}
 
