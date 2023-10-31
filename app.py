@@ -19,11 +19,6 @@ def home():
 
 @app.route('/api/card/new')
 def show():
-    return render_template("newcard.html")
-
-
-@app.route('/api/card/')
-def showpass():
     return render_template("pass.html")
 
 
