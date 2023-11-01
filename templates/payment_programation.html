@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .input {
+        padding-top: 5px;
+        {
+    </style>
+    <title>Payment programation</title>
+</head>
+<body>
+<h2>Insert the dates where you want to check the programation</h2>
+<form name="passdata" action="/api/payment/programation/logic" style="display:flex; flex-wrap: wrap;" >
+    <div>
+        <div>
+            <label>First date: </label>
+            <input class="input" type="date" name="first_date">
+        </div>
+        <div>
+            <label >Last date: </label>
+            <input class="input" type="date" name="last_date">
+        </div>
+        <input class="input" type="submit" name="guardar">
+    </div>
+
+</form>
+</body>
+</html>

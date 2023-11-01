@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .input {
+        padding-top: 5px;
+        {
+    </style>
+    <title>Saving plan</title>
+</head>
+<body>
+<h2>Insert the information of the purchase and we will sugest you a saving plan</h2>
+<form name="passdata" action="/api/simulate/saving/logic" style="display:flex; flex-wrap: wrap;" >
+    <div>
+        <div>
+            <label >Purchase amount: </label>
+            <input class="input" type="number" name="purchase_amount">
+        </div>
+        <div>
+            <label>Monthly payment: </label>
+            <input class="input" type="number" name="monthly_payment">
+        </div>
+        <div>
+            <label>Interest rate: </label>
+            <input class="input" type="text" name="interest_rate">
+        </div>
+        <input class="input" type="submit" name="guardar">
+    </div>
+
+</form>
+</body>
+</html>

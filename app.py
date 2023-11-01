@@ -27,12 +27,27 @@ def show_simulate():
     return render_template("simulatepurchase.html")
 
 
+@app.route('/api/simulate/saving')
+def show_savingplan():
+    return render_template("planedsaving.html")
+
+
+@app.route('/api/purchase/new')
+def show_paymentplan():
+    return render_template("paymentplan.html")
+
+
+@app.route('/api/payment/programation')
+def show_payment_programation():
+    return render_template("payment_programation.html")
+
+
 """
 R1
 """
 
 
-@app.route('/api/card/new/create')
+@app.route('/api/card/new/login')
 def createcard():
     try:
         card_number = request.args["card_number"]
@@ -83,7 +98,7 @@ R3
 """
 
 
-@app.route('/api/simulate/saving')
+@app.route('/api/simulate/saving/logic')
 def simulate_planned_saving():
 
     try:
@@ -93,7 +108,7 @@ def simulate_planned_saving():
 
         planned_saving = CreditCard.saving_plan(monthly_payment, purchase_amount, interest_rate)
 
-        return {"status": "ok", "months": planned_saving}
+        return render_template("pass_planedsaving.html", m=planned_saving)
     except Exception as err:
         return {"status": "error", "message": "Request could not be completed", "error": str(err)}
 
@@ -103,7 +118,7 @@ R4
 """
 
 
-@app.route('/api/purchase/new')
+@app.route('/api/purchase/new/logic')
 def simulate_payment_plan():
     try:
         card_number = request.args["card_number"]
@@ -113,7 +128,7 @@ def simulate_payment_plan():
 
         controllerPaymentPlan.insert(card_number, purchase_amount, purchase_date, payments)
 
-        return {"status": "ok"}
+        return render_template("pass.html")
 
     except Exception as err:
         return {"status": "error", "message": "Request could not be completed", "error": str(err)}
@@ -142,6 +157,27 @@ def showcard():
                 "monthly fee": f"{response.monthly_fee}",
                 "interest rate": f"{response.interest_rate}"
                 }
+    except Exception as err:
+        return {"status": "error", "mensaje": "La peticion no se puede completar", "error": str(err)}
+
+
+"""
+R6
+"""
+
+
+@app.route('/api/payment/programation/logic')
+def payment_programation():
+    try:
+
+        first_date = request.args["first_date"]
+        last_date = request.args["last_date"]
+
+        amount = controllerPaymentPlan.calc_total_payment_in_x_interval(date.fromisoformat(first_date),
+                                                                        date.fromisoformat(last_date))
+
+        return render_template("pass_payment_programation.html", m=amount, first=first_date,
+                               last=last_date)
     except Exception as err:
         return {"status": "error", "mensaje": "La peticion no se puede completar", "error": str(err)}
 

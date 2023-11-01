@@ -5,49 +5,55 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .input {
+        padding-top: 5px;
+        {
+    </style>
     <title>New Card</title>
 </head>
 <body>
 <h2>Insert the information of the card you want to register</h2>
-<form name="passdata" action="/api/card/new/create" style="display:flex; flex-wrap: wrap;" >
+<form name="passdata" action="/api/card/new/logic" style="display:flex; flex-wrap: wrap;" >
     <div>
         <div>
             <label>Card number: </label>
-            <input type="text" name="card_number">
+            <input class="input" type="text" name="card_number">
         </div>
         <div>
             <label>Owner ID: </label>
-            <input type="text" name="owner_id">
+            <input class="input" type="text" name="owner_id">
         </div>
         <div>
             <label>Owner name: </label>
-            <input type="text" name="owner_name">
+            <input class="input" type="text" name="owner_name">
         </div>
         <div>
             <label>Bank name: </label>
-            <input type="text" name="bank_name">
+            <input class="input" type="text" name="bank_name">
         </div>
         <div>
             <label>Due date: </label>
-            <input type="date" name="due_date">
+            <input class="input" type="date" name="due_date">
         </div>
         <div>
              <label>Franchise: </label>
-            <input type="text" name="franchise">
+            <input class="input" type="text" name="franchise">
         </div>
         <div>
             <label>Payment day: </label>
-            <input type="text" name="payment_day">
+            <input class="input" type="number" name="payment_day">
         </div>
         <div>
             <label>Monthly fee: </label>
-            <input type="text" name="monthly_fee">
+        <div>
+            <input class="input" type="text" name="monthly_fee">
         </div>
         <div>
             <label>Interest rate: </label>
-            <input type="text" name="interest_rate">
+            <input class="input"  type="text" name="interest_rate">
         </div>
-        <input type="submit" name="guardar">
+        <input class="input"  type="submit" name="guardar">
     </div>
 
 </form>

@@ -67,12 +67,13 @@
         <div class="options">
             <h2 class="optionstitle">Options you can choose: </h2>
             <div class="options-cards">
-                <div class="card" style="background-image: {{url_for('static', filename='creditcard2.jpg')}};">
+                <div class="card">
                     <div class="text">
                         <h3>Register a Credit Card</h3>
                         <p>You can register a credit card in the database.</p>
                     </div>
                     <button class="text-button" onclick="location.href='/api/card/new'">Register</button>
+
                 </div>
 
                 <div class="card" style="background-image: {{url_for('static', filename='compra2.webp')}};">
@@ -87,10 +88,10 @@
                 <div class="card" style="background-image: {{url_for('static', filename='savemoney.gif')}};">
                     <div class="text">
                         <h3>Sugested Saving Plan</h3>
-                        <p>Here we sugest you a saving plan.</p>
+                        <p>Here we sugest you a saving plan for a purchase.</p>
                     </div>
                     
-                    <button class="text-button">Saving</button>
+                    <button class="text-button" onclick="location.href='/api/simulate/saving'">Saving</button>
                 </div>
 
                 <div class="card" style="background-image: {{url_for('static', filename='registrocompra.jpg')}};">
@@ -99,17 +100,16 @@
                         <p>You can register a purchase in the database.</p>
                     </div>
 
-                    
-                    <button class="text-button">Purchase</button>
+                    <button class="text-button" onclick="location.href='/api/purchase/new'">Purchase</button>
                 </div>
 
                 <div class="card" style="background-image: {{url_for('static', filename='compra.jpg')}};">
                     <div class="text">
-                        <h3>Payments Plan</h3>
-                        <p>You can check the payment plan for a purchase.</p>
+                        <h3>Payments Programation</h3>
+                        <p>You can check the payment between selected months.</p>
                     </div>
                     
-                    <button class="text-button">Payments</button>
+                    <button class="text-button" onclick="location.href='/api/payment/programation'">Payments</button>
                 </div>
 
                 <div class="card" style="background-image: {{url_for('static', filename='surprise2.jpg')}};">
@@ -118,7 +118,7 @@
                         <p>It's surprise.</p>
                     </div>
                     
-                    <button class="text-button">Surprise</button>
+                    <button class="text-button" onclick="location.href=''">Surprise</button>
                 </div>
 
             </div>
