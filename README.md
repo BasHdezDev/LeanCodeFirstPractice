@@ -122,8 +122,12 @@ Copy the whole path and copy it on the search bar and click enter
 - You must provide a:
 - card_number = XXXXXXXXXX        **Insert a card number that you already registered in the database** **If the card number does'nt exists in the database it would show an error** *Normally a number*
 
-- After put everything in his place, you will put it in the next path:
 
-- http://127.0.0.1:5000/api/card/show?card_number=YOUR_CREDIT_CARD
+# How to run the web app
 
-Copy the whole path and copy it on the search bar and click enter
+- Go to the file app.py
+- Click on run
+- In the terminal you will see a link (*Normally this one: **http://127.0.0.1:5000***)
+- Click on it, and open it in your browser
+- Try the app!!
+  
