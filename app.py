@@ -42,12 +42,17 @@ def show_payment_programation():
     return render_template("payment_programation.html")
 
 
+@app.route('/api/card/delete')
+def show_delete_creditcard():
+    return render_template("surprisefuntionality.html")
+
+
 """
 R1
 """
 
 
-@app.route('/api/card/new/login')
+@app.route('/api/card/new/logic')
 def createcard():
     try:
         card_number = request.args["card_number"]
@@ -178,6 +183,24 @@ def payment_programation():
 
         return render_template("pass_payment_programation.html", m=amount, first=first_date,
                                last=last_date)
+    except Exception as err:
+        return {"status": "error", "mensaje": "La peticion no se puede completar", "error": str(err)}
+
+
+"""
+R7
+"""
+
+
+@app.route('/api/card/delete/logic')
+def delete_creditcard():
+    try:
+
+        card_number = request.args["card_number"]
+
+        controllerCreditCard.delete_a_creditcard(card_number)
+
+        return render_template("pass_surprisefuntionality.html")
     except Exception as err:
         return {"status": "error", "mensaje": "La peticion no se puede completar", "error": str(err)}
 

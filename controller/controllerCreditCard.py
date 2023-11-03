@@ -121,11 +121,11 @@ def insert(creditcard: CreditCard):
         cursor.connection.rollback()
 
 
-def delete_a_creditcard(creditcard: CreditCard):
+def delete_a_creditcard(card_number):
     """
     Deletes a credit card from the table
     """
-    sql = f"DELETE FROM creditcard WHERE card_number = '{creditcard.card_number}'"
+    sql = f"DELETE FROM creditcard WHERE card_number = '{card_number}'"
     cursor = get_cursor()
     cursor.execute(sql)
     cursor.connection.commit()

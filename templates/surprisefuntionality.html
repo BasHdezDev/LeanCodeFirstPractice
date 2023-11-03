@@ -10,19 +10,15 @@
         padding-top: 5px;
         }
     </style>
-    <title>Payment programation</title>
+    <title>Purchase</title>
 </head>
 <body>
-<h2>Insert the dates where you want to check the programation</h2>
-<form name="passdata" action="/api/payment/programation/logic" style="display:flex; flex-wrap: wrap;" >
+<h2>Insert the ID of the card you want to delete in the database</h2>
+<form name="passdata" action="/api/card/delete/logic" style="display:flex; flex-wrap: wrap;" >
     <div>
         <div>
-            <label>First date: </label>
-            <input class="input" type="date" name="first_date">
-        </div>
-        <div>
-            <label >Last date: </label>
-            <input class="input" type="date" name="last_date">
+            <label >Card number: </label>
+            <input class="input" type="number" name="card_number">
         </div>
         <input class="input" type="submit" name="guardar">
     </div>
